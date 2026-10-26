@@ -1,0 +1,37 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.services {
+  max-width: $container-width;
+  margin: 40px auto;
+  padding: 0 16px;
+
+  &__title {
+    margin: 0 0 24px;
+  }
+
+  &__list {
+    display: flex;
+    gap: 24px;
+
+    @include tablet {
+      flex-wrap: wrap;
+    }
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    flex: 1 1 0;
+
+    @include tablet {
+      flex-basis: calc(50% - 12px);
+    }
+
+    @include mobile {
+      flex-basis: auto;
+    }
+  }
+}

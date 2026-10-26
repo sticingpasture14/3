@@ -1,0 +1,20 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.swiper {
+  --swiper-theme-color: #{$color-accent};
+  max-width: $container-width;
+  margin: 0 auto;
+}
+
+.swiper-slide {
+  @include flex-center;
+  height: 300px;
+  font-size: 32px;
+  background: #2a2a2a;
+
+  @include mobile {
+    height: 200px;
+    font-size: 24px;
+  }
+}

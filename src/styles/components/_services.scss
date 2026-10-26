@@ -10,6 +10,12 @@
     margin: 0 0 24px;
   }
 
+  &__more {
+    display: inline-block;
+    margin-bottom: 24px;
+    color: $color-accent;
+  }
+
   &__list {
     display: flex;
     gap: 24px;

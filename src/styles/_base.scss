@@ -1,7 +1,11 @@
 @use 'variables' as *;
-
+ 
 body {
   font-family: $font-main;
   color: $color-text;
   background: $color-bg;
+}
+ 
+.no-select {
+  user-select: none;
 }

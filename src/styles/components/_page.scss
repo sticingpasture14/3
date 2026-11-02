@@ -1,0 +1,13 @@
+@use '../variables' as *;
+
+.page {
+  min-height: 100vh;
+  font-weight: 300;
+  color: $color-body;
+  background: $color-page-bg;
+
+  &__container {
+    max-width: $page-width;
+    margin: 0 auto;
+  }
+}

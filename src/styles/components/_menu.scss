@@ -1,0 +1,60 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.menu {
+  margin-top: 24px;
+
+  @include from-tablet {
+    margin-top: 32px;
+  }
+
+  @include from-desktop {
+    margin-top: 8px;
+  }
+
+  &__list {
+    display: flex;
+    gap: 8px;
+    margin: 0;
+    padding: 0 16px;
+    list-style: none;
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include from-tablet {
+      padding: 0 24px;
+    }
+
+    @include from-desktop {
+      flex-wrap: wrap;
+      padding: 0 32px;
+      overflow: visible;
+    }
+  }
+
+  &__item {
+    flex: 0 0 auto;
+  }
+
+  &__link {
+    display: block;
+    padding: 9px 16px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 18px;
+    color: $color-muted;
+    text-decoration: none;
+    white-space: nowrap;
+
+    &--active {
+      color: $color-teal-dark;
+      background: $color-white;
+      border-color: $color-teal-light;
+    }
+  }
+}

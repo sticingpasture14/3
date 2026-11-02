@@ -17,3 +17,15 @@
     @content;
   }
 }
+
+@mixin from-tablet {
+  @media (min-width: $screen-tablet) {
+    @content;
+  }
+}
+
+@mixin from-desktop {
+  @media (min-width: $screen-desktop) {
+    @content;
+  }
+}

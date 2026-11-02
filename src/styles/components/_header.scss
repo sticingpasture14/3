@@ -1,0 +1,165 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.header {
+  @include from-desktop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 32px 0 0;
+  }
+
+  &__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 16px;
+    background: $color-white;
+    border-bottom: 1px solid $color-teal-light;
+
+    @include from-tablet {
+      padding: 24px;
+    }
+
+    @include from-desktop {
+      order: 2;
+      padding: 0;
+      background: none;
+      border: 0;
+    }
+  }
+
+  &__start {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @include from-desktop {
+      display: none;
+    }
+  }
+
+  &__end {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__contacts {
+    display: none;
+    gap: 16px;
+
+    @include from-tablet {
+      display: flex;
+    }
+
+    @include from-desktop {
+      display: none;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 16px;
+
+    @include from-desktop {
+      gap: 32px;
+    }
+  }
+
+  &__action {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: $color-title;
+    text-decoration: none;
+  }
+
+  &__label {
+    display: none;
+
+    @include from-desktop {
+      display: block;
+    }
+  }
+
+  &__button {
+    display: block;
+    padding: 0;
+    border: 0;
+    line-height: 0;
+    background: none;
+    cursor: pointer;
+  }
+
+  &__icon {
+    display: block;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+  }
+
+  &__logo {
+    display: block;
+    line-height: 0;
+  }
+
+  &__logo-img {
+    display: block;
+    width: auto;
+    height: 36px;
+  }
+
+  &__divider {
+    flex-shrink: 0;
+    width: 1px;
+    height: 40px;
+    background: $color-line;
+
+    @include from-desktop {
+      display: none;
+    }
+
+    &--start {
+      display: none;
+
+      @include from-tablet {
+        display: block;
+      }
+
+      @include from-desktop {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin: 24px 0 0;
+    padding-left: 16px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 40px;
+    color: $color-title;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: $color-teal;
+    }
+
+    @include from-tablet {
+      padding-left: 24px;
+    }
+
+    @include from-desktop {
+      margin: 0;
+      padding-left: 32px;
+    }
+  }
+}
